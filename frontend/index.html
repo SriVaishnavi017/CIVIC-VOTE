@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicVote</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <h1>CivicVote</h1>
+          <p>Digital Election & Vote Auditing</p>
+        </div>
+        <button id="loginBtn">Demo Login</button>
+      </header>
+
+      <main class="content">
+        <section class="card">
+          <h2>Academic Microservice Demo</h2>
+          <p>
+            This frontend is intentionally separated from the backend services, which are implemented as
+            independent Spring Boot modules for Auth, Election, Gateway, and Eureka discovery.
+          </p>
+        </section>
+
+        <section class="grid">
+          <div class="card">
+            <h3>Auth</h3>
+            <p>Register / login and receive JWT tokens.</p>
+          </div>
+          <div class="card">
+            <h3>Election</h3>
+            <p>Create elections, candidates, and activate voting periods.</p>
+          </div>
+          <div class="card">
+            <h3>Gateway</h3>
+            <p>Route all frontend requests via a single API entry point.</p>
+          </div>
+          <div class="card">
+            <h3>Eureka</h3>
+            <p>Discover and register backend services dynamically.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
