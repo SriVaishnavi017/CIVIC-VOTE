@@ -15,6 +15,9 @@
 .env.*
 *.local
 
+# Local documentation
+docs/
+
 # Logs
 *.log
 
