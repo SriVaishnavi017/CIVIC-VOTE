@@ -1,0 +1,44 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/api/auth/**
+        - id: election-service
+          uri: lb://ELECTION-SERVICE
+          predicates:
+            - Path=/api/elections/**
+        - id: voting-service
+          uri: lb://VOTING-SERVICE
+          predicates:
+            - Path=/api/votes/**
+        - id: result-service
+          uri: lb://RESULT-SERVICE
+          predicates:
+            - Path=/api/results/**
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
